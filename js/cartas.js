@@ -1,5 +1,6 @@
 let cartasEl = document.querySelectorAll('.cartas');
-let duplasFormadas = [];
+let duplasFormadas = [],
+    cartasViradas = [];
 
 function conferirDuplas(v, num){ //ele confere se ja tem uma dupla com esse numero
     let cont = 0;
@@ -38,3 +39,33 @@ function criarDuplas(){
 }
 
 criarDuplas();
+
+for (let cartaEl of cartasEl) {
+    cartaEl.classList.add('virada');
+}
+
+function clicou(e){
+    let cartaVirada = e.currentTarget;
+
+    if (cartaVirada.classList.contains('virada')) {
+        cartaVirada.classList.remove('virada');
+        cartasViradas.push(cartaVirada);
+
+        if(cartasViradas.length === 2){
+            
+            if(cartasViradas[0].className === cartasViradas[1].className){
+                cartasViradas = [];
+            }
+
+            else{
+                cartasViradas[0].classList.add('virada');
+                cartasViradas[1].classList.add('virada');
+                cartasViradas = [];
+            }
+        }
+    }
+}
+
+for(let i = 0; i < cartasEl.length; i++){
+    cartasEl[i].addEventListener('click', clicou);
+}
