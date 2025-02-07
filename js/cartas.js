@@ -11,19 +11,19 @@ function conferirDuplas(v, num){ //ele confere se ja tem uma dupla com esse nume
     return false;
 }
 
-function criarDuplas(){
+function criarDuplas(){ 
     let numAleatorio;
 
     for (let i = 0; i < cartasEl.length; i++) {
-        numAleatorio = Math.floor(Math.random() * 4) + 1;
+        numAleatorio = Math.floor(Math.random() * 4) + 1; //pega um numero aleatorio para usar como class
 
-        if (!conferirDuplas(duplasFormadas, numAleatorio)) {
+        if (!conferirDuplas(duplasFormadas, numAleatorio)) {//se n tiver dupla com essa class adiciona a class
             cartasEl[i].classList.add('c' + numAleatorio);
-            duplasFormadas.push(numAleatorio);
+            duplasFormadas.push(numAleatorio); //adciona o numero aleatorio da class para verificaçao
             //cartasEl[i].classList.remove('virada');
 
         } else {
-            while (conferirDuplas(duplasFormadas, numAleatorio)) {
+            while (conferirDuplas(duplasFormadas, numAleatorio)) { // do contrario aleatoriza outro numero que nao tenha dupla
                 numAleatorio = Math.floor(Math.random() * 4) + 1;
 
                 if (!conferirDuplas(duplasFormadas, numAleatorio)) {
@@ -40,24 +40,30 @@ function criarDuplas(){
 
 criarDuplas();
 
-for (let cartaEl of cartasEl) {
-    cartaEl.classList.add('virada');
+function virarCartas() { 
+    setTimeout(function() {
+        for (let cartaEl of cartasEl) {
+            cartaEl.classList.add('virada');
+        }
+    }, 1000*3);
 }
+
+virarCartas();
 
 function clicou(e){
     let cartaVirada = e.currentTarget;
 
-    if (cartaVirada.classList.contains('virada')) {
+    if (cartaVirada.classList.contains('virada')) { //para funcionar apenas nas cartas viradas
         cartaVirada.classList.remove('virada');
-        cartasViradas.push(cartaVirada);
+        cartasViradas.push(cartaVirada);//adiciona a carta virada em um vetor para verificaçao
 
-        if(cartasViradas.length === 2){
+        if(cartasViradas.length === 2){ 
             
-            if(cartasViradas[0].className === cartasViradas[1].className){
+            if(cartasViradas[0].className === cartasViradas[1].className){ //se elas forem iguais,,,,,,, prossegue o jogo
                 cartasViradas = [];
             }
 
-            else{
+            else{ //se nao,,,,,,,,, vira elas novamente
                 cartasViradas[0].classList.add('virada');
                 cartasViradas[1].classList.add('virada');
                 cartasViradas = [];
@@ -66,6 +72,7 @@ function clicou(e){
     }
 }
 
-for(let i = 0; i < cartasEl.length; i++){
+
+for(let i = 0; i < cartasEl.length; i++) {
     cartasEl[i].addEventListener('click', clicou);
 }
