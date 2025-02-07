@@ -1,0 +1,37 @@
+.cartas{
+    width: 200px;
+    height: 200px;
+}
+
+.cartas{
+    background-color: pink;
+}
+
+.cartas.1{
+    background-color: red;
+}
+
+.cartas.2{
+    background-color: green;
+
+}
+
+.cartas.3{
+    background-color: yellow;
+
+}
+
+.cartas.4{
+    background-color: blue;
+
+}
+
+#container-cartas{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 15px 10px;
+    margin-top: 10%;
+    margin-left: 20%;
+    margin-right: 15%;
+}
