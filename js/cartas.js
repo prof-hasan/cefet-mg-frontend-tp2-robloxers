@@ -40,15 +40,9 @@ function criarDuplas(){
 
 criarDuplas();
 
-function virarCartas() { 
-    setTimeout(function() {
-        for (let cartaEl of cartasEl) {
-            cartaEl.classList.add('virada');
-        }
-    }, 1000*3);
+for (let i = 0; i < cartasEl.length; i++) {
+    cartasEl[i].classList.add('virada');
 }
-
-virarCartas();
 
 function clicou(e){
     let cartaVirada = e.currentTarget;
@@ -63,7 +57,7 @@ function clicou(e){
                 cartasViradas = [];
             }
 
-            else{ //se nao,,,,,,,,, vira elas novamente
+            else{ //se nao, vira elas novamente
                 cartasViradas[0].classList.add('virada');
                 cartasViradas[1].classList.add('virada');
                 cartasViradas = [];

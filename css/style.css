@@ -3,25 +3,25 @@
     height: 200px;
 }
 
-.cartas{
-    background-color: pink;
+.virada{
+    background-color: pink !important; 
 }
 
-.cartas.1{
+.c1{
     background-color: red;
 }
 
-.cartas.2{
+.c2{
     background-color: green;
 
 }
 
-.cartas.3{
+.c3{
     background-color: yellow;
 
 }
 
-.cartas.4{
+.c4{
     background-color: blue;
 
 }
@@ -31,7 +31,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 15px 10px;
-    margin-top: 10%;
+    /*margin-top: 10%;
     margin-left: 20%;
-    margin-right: 15%;
+    margin-right: 15%;*/
 }
