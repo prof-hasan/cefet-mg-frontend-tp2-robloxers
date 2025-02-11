@@ -1,6 +1,7 @@
 let cartasEl = document.querySelectorAll('.cartas');
-let duplasFormadas = [],
-    cartasViradas = [];
+let duplasFormadas = [];
+let cartasViradas = [];
+let bloqueio = false; //variável que impede o jogador de jogar enquanto tiver cartas recem viradas e erradas
 
 function conferirDuplas(v, num){ //ele confere se ja tem uma dupla com esse numero
     let cont = 0;
@@ -40,11 +41,18 @@ function criarDuplas(){
 
 criarDuplas();
 
-for (let i = 0; i < cartasEl.length; i++) {
-    cartasEl[i].classList.add('virada');
-}
+setTimeout(function() {
+    for (let i = 0; i < cartasEl.length; i++) {
+        cartasEl[i].classList.add('virada');
+    }
+}, 1000*2); //deixa as cartas viradas por um tempo no inicio
+
 
 function clicou(e){
+    if(bloqueio) {
+        return; // se tiver cartas recém viradas e erradas, o jogador não joga enquanto viradas
+    }
+
     let cartaVirada = e.currentTarget;
 
     if (cartaVirada.classList.contains('virada')) { //para funcionar apenas nas cartas viradas
@@ -58,10 +66,18 @@ function clicou(e){
             }
 
             else{ //se nao, vira elas novamente
-                cartasViradas[0].classList.add('virada');
-                cartasViradas[1].classList.add('virada');
-                cartasViradas = [];
+                bloqueio = true;
+
+                setTimeout(function() {
+                    cartasViradas[0].classList.add('virada');
+                    cartasViradas[1].classList.add('virada');
+                    cartasViradas = [];
+                    bloqueio = false;
+                }, 1000);
+                
+                
             }
+            
         }
     }
 }
