@@ -39,16 +39,36 @@ function criarDuplas(){
     }
 }
 
-criarDuplas();
-
-setTimeout(function() {
-    for (let i = 0; i < cartasEl.length; i++) {
-        cartasEl[i].classList.add('virada');
+function virarCartas(cartas) {
+    for (let carta of cartas) {
+        carta.classList.add('virada');
     }
-}, 1000*2); //deixa as cartas viradas por um tempo no inicio
+}
 
+function confeirFimDePartida() { //conefere se a partida terminou
+    for (let carta of cartasEl) { 
+        if(carta.classList.contains('virada')) {
+            return  false; //se ainda tiver uma carta virada, não terminou
+        }
+    }
+    return true; //se todas as cartas foram viradas, acabou
+}
 
-function clicou(e){
+function iniciarNovoJogo() {
+    for (let carta of cartasEl) {
+        carta.classList.remove('c1');
+        carta.classList.remove('c2');
+        carta.classList.remove('c3');
+        carta.classList.remove('c4');
+    }
+    duplasFormadas = [];
+    criarDuplas();
+    setTimeout(() => virarCartas(cartasEl), 1000*2); //deixa as cartas viradas por um tempo no inicio
+}
+
+iniciarNovoJogo();
+
+function virou(e){
     if(bloqueio) {
         return; // se tiver cartas recém viradas e erradas, o jogador não joga enquanto viradas
     }
@@ -63,16 +83,20 @@ function clicou(e){
             
             if(cartasViradas[0].className === cartasViradas[1].className){ //se elas forem iguais,,,,,,, prossegue o jogo
                 cartasViradas = [];
+
+                if(confeirFimDePartida()) {
+                    setTimeout(iniciarNovoJogo, 1000);
+                    //iniciarNovoJogo();
+                }
             }
 
             else{ //se nao, vira elas novamente
                 bloqueio = true;
 
-                setTimeout(function() {
-                    cartasViradas[0].classList.add('virada');
-                    cartasViradas[1].classList.add('virada');
-                    cartasViradas = [];
+                setTimeout(() => {
+                    virarCartas(cartasViradas);
                     bloqueio = false;
+                    cartasViradas = [];
                 }, 1000);
                 
                 
@@ -84,5 +108,5 @@ function clicou(e){
 
 
 for(let i = 0; i < cartasEl.length; i++) {
-    cartasEl[i].addEventListener('click', clicou);
+    cartasEl[i].addEventListener('click', virou);
 }
