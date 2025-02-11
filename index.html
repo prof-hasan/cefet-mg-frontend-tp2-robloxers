@@ -1,20 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style-index.css">
+    <link rel="stylesheet" href="css/tema.css">
     <title>Jogo da memória</title>
 </head>
-<body>
-    <main>
-        <div id="menu">
+
+<body id="body">
+    <div id="menu">
+        <main>
             <h1>Jogo da Memória</h1>
             <button><a href="jogo.html">Jogar</a></button>
-            <button><a href="tema.html">Escolher tema</a></button>
-            <button><a href="creditos.html">Créditos</a></button>
-        </div>
-    </main>
-    
+            <button>Escolher tema</button>
+            <button id="botao-creditos">Créditos</button>
+        </main>
+    </div>
+
+    <div id="tema" class="invisivel">
+        <header>
+            <img src="imgs/casa.png" class="voltar">
+            <h1>Temas</h1>
+            <p>Escolha um tema antes de iniciar o jogo!</p>
+        </header>
+        
+        <main>
+            <article>
+                <img src="imgs/presidentes/presidentes-verso.png">
+                <p>Presidentes</p>
+                <button class="botao-escolha" value="presidentes">Escolher</button>
+            </article>
+            <article>
+                <img src="imgs/sabrina/sabrina-verso.png">
+                <p>Sabrina Carpenter</p>
+                <button class="botao-escolha" value="sabrina">Escolher</button>
+            </article>
+            <article>
+                <img src="imgs/roblox/roblox-verso.png">
+                <p>Roblox</p>
+                <button class="botao-escolha" value="roblox">Escolher</button>
+            </article>
+            <!--<article>
+                <img src="imgs/cores/rosa.png">
+                <p>Rosa</p>
+                <button class="botao-escolha">Escolher</button>
+            </article>
+            <article>
+                <img src="imgs/cores/azul.png">
+                <p>Azul</p>
+                <button class="botao-escolha">Escolher</button>
+            </article>
+            <article>
+                <img src="imgs/cores/amarelo.png">
+                <p>Amarelo</p>
+                <button class="botao-escolha">Escolher</button>
+            </article>-->
+        </main>
+    </div>
+
+<script src="js/modal.js"></script>
 </body>
+
 </html>

@@ -1,18 +1,71 @@
 body{
-    overflow-y: hidden;
-    background-image: url(/imgs/fundo.png);
+    background-image: url(/imgs/fundo-principal.png);
     background-repeat: no-repeat;
-    background-position: top;
     background-size: cover;
 }
 
 #menu{
     text-align: center;
-    margin-top: 25cap;
+    margin-top: 20cap;
+    overflow-y: hidden;
 }
 
-#menu > h1{
+#menu h1{
     font-size: 10cap;
-    color: khaki;
-    text-shadow: 2px 2px rgb(165, 112, 42);
+    color: white;
+    text-shadow: 2px 2px grey;
+}
+
+#tema > header img{
+    width: 50px;
+    /*float: right;*/
+    border: 1px solid brown;
+}
+
+#tema{
+    background-color: white;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    padding: 10px;
+}
+
+#tema main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+}
+
+article{
+    text-align: center;
+    border: 1px solid brown;
+    border-radius: 10px;
+}
+
+article img{
+    width: 100px;
+}
+
+.visivel{
+    left: 0;
+}
+
+.invisivel{
+    left: -100%;
+}
+
+/*Temas:*/
+
+.presidentes{
+    background-image: url(/imgs/fundo-presidentes.png);
+}
+
+/*.sabrina{
+
+}
+
+.roblox{
+
 }
