@@ -75,26 +75,31 @@ function iniciarNovoJogo() {
     duplasFormadas = [];
     criarDuplas();
 
-    if (fase === 5) {
-        dificuldade = 'medio';
+    if (fase >= 5 && fase < 10) {
+        dificuldade = 'médio';
     }
-    if (fase === 10) {
-        dificuldade = 'dificil';
+    else if (fase >= 10) {
+        dificuldade = 'difícil';
+    }
+    else {
+        dificuldade = 'fácil';
     }
     
-    if (dificuldade === 'facil') {
+    if (dificuldade === 'fácil') {
         tempo = 45;
         subtrairPontuacao = 5;
     } 
-    if (dificuldade === 'medio') {
+    if (dificuldade === 'médio') {
         tempo = 30;
         subtrairPontuacao = 10;
     } 
-    if (dificuldade === 'dificil') {
+    if (dificuldade === 'difícil') {
         tempo = 15;
         subtrairPontuacao = 20;
     } 
     
+    $relogio.html(tempo);
+
     $fase.html(fase);
 
     for (let carta of cartasEl) {
@@ -110,11 +115,12 @@ function iniciarNovoJogo() {
 
 setInterval(function() {
     if(prenderRelogio) return;
-    tempo-=1;
+    tempo -= 1;
     $relogio.html(tempo);
-    if(tempo == 0) {
-        tempo = 40;
+    if(tempo === 0) {
+        //tempo = 40;
         $placar.html('0');
+        fase = 1;
         pontuacao = 0;
         iniciarNovoJogo();
     }
