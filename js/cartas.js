@@ -2,6 +2,16 @@ let cartasEl = document.querySelectorAll('.cartas');
 let duplasFormadas = [];
 let cartasViradas = [];
 let bloqueio = false; //variável que impede o jogador de jogar enquanto tiver cartas recem viradas e erradas
+let pontuacao = 0;
+let $placar = $('.pontuacao');
+let tempo;
+let $relogio = $('.tempo');
+let prenderRelogio = true;
+let dificuldade = 'facil';
+let fase = 1;
+let $fase = $('.fase');
+let subtrairPontuacao;
+let intervalo;
 
 function conferirDuplas(v, num){ //ele confere se ja tem uma dupla com esse numero
     let cont = 0;
@@ -48,9 +58,10 @@ function virarCartas(cartas) {
 function confeirFimDePartida() { //conefere se a partida terminou
     for (let carta of cartasEl) { 
         if(carta.classList.contains('virada')) {
-            return  false; //se ainda tiver uma carta virada, não terminou
+            return false; //se ainda tiver uma carta virada, não terminou
         }
     }
+    //tempo = 40;
     return true; //se todas as cartas foram viradas, acabou
 }
 
@@ -63,8 +74,51 @@ function iniciarNovoJogo() {
     }
     duplasFormadas = [];
     criarDuplas();
-    setTimeout(() => virarCartas(cartasEl), 1000*2); //deixa as cartas viradas por um tempo no inicio
+
+    if (fase === 5) {
+        dificuldade = 'medio';
+    }
+    if (fase === 10) {
+        dificuldade = 'dificil';
+    }
+    
+    if (dificuldade === 'facil') {
+        tempo = 45;
+        subtrairPontuacao = 5;
+    } 
+    if (dificuldade === 'medio') {
+        tempo = 30;
+        subtrairPontuacao = 10;
+    } 
+    if (dificuldade === 'dificil') {
+        tempo = 15;
+        subtrairPontuacao = 20;
+    } 
+    
+    $fase.html(fase);
+
+    for (let carta of cartasEl) {
+        carta.classList.remove('virada');
+    }
+
+    prenderRelogio = true;
+    setTimeout(() =>{
+        virarCartas(cartasEl);
+        prenderRelogio = false;
+    }, 1000*2); //deixa as cartas viradas por um tempo no inicio
 }
+
+setInterval(function() {
+    if(prenderRelogio) return;
+    tempo-=1;
+    $relogio.html(tempo);
+    if(tempo == 0) {
+        tempo = 40;
+        $placar.html('0');
+        pontuacao = 0;
+        iniciarNovoJogo();
+    }
+}, 1000);
 
 iniciarNovoJogo();
 
@@ -84,7 +138,11 @@ function virou(e){
             if(cartasViradas[0].className === cartasViradas[1].className){ //se elas forem iguais,,,,,,, prossegue o jogo
                 cartasViradas = [];
 
+                pontuacao += 10;
+                $placar.html(pontuacao);
+
                 if(confeirFimDePartida()) {
+                    fase +=1;
                     setTimeout(iniciarNovoJogo, 1000);
                     //iniciarNovoJogo();
                 }
@@ -98,8 +156,12 @@ function virou(e){
                     bloqueio = false;
                     cartasViradas = [];
                 }, 1000);
-                
-                
+                pontuacao -= subtrairPontuacao;
+
+                if(pontuacao < 0) pontuacao = 0;
+
+                $placar.html(pontuacao);
+
             }
             
         }
