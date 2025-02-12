@@ -35,3 +35,14 @@
     margin-left: 20%;
     margin-right: 15%;*/
 }
+
+#perdeu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: aliceblue;
+    width: 40%;
+    display: none;
+}
+

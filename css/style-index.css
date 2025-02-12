@@ -1,5 +1,5 @@
 body{
-    background-image: url(/imgs/fundo-principal.png);
+    background-image: url(/imgs/fundo-roblox.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -59,7 +59,7 @@ article img{
 /*Temas:*/
 
 .presidentes{
-    background-image: url(/imgs/fundo-presidentes.png);
+    background-image: url(/imgs/fundo-presidentes.jpg);
 }
 
 /*.sabrina{
@@ -68,4 +68,11 @@ article img{
 
 .roblox{
 
+}
+*/
+
+/*botao nome*/
+
+#registrar {
+    
 }

@@ -11,7 +11,13 @@ let dificuldade = 'facil';
 let fase = 1;
 let $fase = $('.fase');
 let subtrairPontuacao;
-let intervalo;
+let jogador = localStorage.getItem('jogador');
+let $janelaPerdeu = $('#perdeu');
+let $sair = $('#sair');
+let $jogarNovamente = $('#jogar-novamente');
+
+//let 
+jogador = JSON.parse(jogador);
 
 function conferirDuplas(v, num){ //ele confere se ja tem uma dupla com esse numero
     let cont = 0;
@@ -86,7 +92,7 @@ function iniciarNovoJogo() {
     }
     
     if (dificuldade === 'fácil') {
-        tempo = 45;
+        tempo = 15;
         subtrairPontuacao = 5;
     } 
     if (dificuldade === 'médio') {
@@ -117,12 +123,30 @@ setInterval(function() {
     if(prenderRelogio) return;
     tempo -= 1;
     $relogio.html(tempo);
+
     if(tempo === 0) {
         //tempo = 40;
-        $placar.html('0');
-        fase = 1;
-        pontuacao = 0;
-        iniciarNovoJogo();
+
+        if(jogador.recorde < pontuacao) {
+                jogador.recorde = pontuacao;
+
+                localStorage.setItem('jogador', JSON.stringify(jogador));
+            }
+        
+        prenderRelogio = true;
+        bloqueio = true;
+        $janelaPerdeu.css('display', 'block');
+        $('#perdeu p').html(`Pontuação: ${pontuacao}`);
+
+        $jogarNovamente.click(function() {
+            prenderRelogio = false;
+            bloqueio = false;
+            $placar.html('0');
+            fase = 1;
+            pontuacao = 0;
+            $janelaPerdeu.css('display', 'none');
+            iniciarNovoJogo();
+        });
     }
 }, 1000);
 
