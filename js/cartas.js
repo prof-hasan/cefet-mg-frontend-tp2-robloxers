@@ -15,6 +15,7 @@ let jogador = localStorage.getItem('jogador');
 let $janelaPerdeu = $('#perdeu');
 let $sair = $('#sair');
 let $jogarNovamente = $('#jogar-novamente');
+let $voltarInicio = $('#voltar-inicio');
 
 //let 
 jogador = JSON.parse(jogador);
@@ -131,7 +132,7 @@ setInterval(function() {
                 jogador.recorde = pontuacao;
 
                 localStorage.setItem('jogador', JSON.stringify(jogador));
-            }
+        }
         
         prenderRelogio = true;
         bloqueio = true;
@@ -202,3 +203,11 @@ function virou(e){
 for(let i = 0; i < cartasEl.length; i++) {
     cartasEl[i].addEventListener('click', virou);
 }
+
+$voltarInicio.click(function() {
+    if(jogador.recorde < pontuacao) {
+        jogador.recorde = pontuacao;
+
+        localStorage.setItem('jogador', JSON.stringify(jogador));
+    }
+});
