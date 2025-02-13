@@ -1,0 +1,10 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: darksalmon;
+}
+
+#menu-secundario > img{
+    width: 25px;
+}

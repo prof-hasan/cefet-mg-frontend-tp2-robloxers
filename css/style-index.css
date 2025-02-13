@@ -1,19 +1,40 @@
 body{
-    background-image: url(/imgs/fundo-roblox.jpg);
+    background-image: url(/imgs/fundo-principal.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 #menu{
-    text-align: center;
+    /*text-align: center;
     margin-top: 20cap;
-    overflow-y: hidden;
+    overflow-y: hidden;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
 }
 
 #menu h1{
     font-size: 10cap;
-    color: white;
-    text-shadow: 2px 2px grey;
+    color: pink;
+    text-shadow: 2px 2px rgb(144, 46, 78);
+}
+
+#botao-jogar > a:link, #botao-jogar > a:visited, #botao-jogar > a:hover, #botao-jogar > a:active{
+    color: rgb(144, 46, 78); 
+    text-decoration: none;
+}
+
+#menu label, #menu p, #botao-creditos, #botao-tema, #botao-jogar{
+    color: rgb(144, 46, 78);
+    border: 1px solid rgb(235, 73, 127);
+    background-color: pink;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#botao-creditos, #botao-tema, #botao-jogar{
+    font-size: 25px;
 }
 
 #tema > header img{
@@ -30,7 +51,7 @@ body{
     padding: 10px;
 }
 
-#tema main{
+#tema section{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -56,23 +77,10 @@ article img{
     left: -100%;
 }
 
-/*Temas:*/
-
-.presidentes{
-    background-image: url(/imgs/fundo-presidentes.jpg);
-}
-
-/*.sabrina{
-
-}
-
-.roblox{
-
-}
-*/
-
 /*botao nome*/
 
 #registrar {
-    
+    background-color: lightblue;
+    color: rgb(65, 128, 149);
+    border: 1px solid rgb(123, 182, 202);
 }

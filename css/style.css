@@ -46,3 +46,16 @@
     display: none;
 }
 
+/*Temas:*/
+
+.presidentes{
+    background-image: url(/imgs/fundo-presidentes.jpg);
+}
+
+/*.sabrina{
+    background-image: url(/imgs/fundo-presidentes.jpg);
+}*/
+
+.roblox{
+    background-image: url(/imgs/fundo-roblox.jpg);
+}

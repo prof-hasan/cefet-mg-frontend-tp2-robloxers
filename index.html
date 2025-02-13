@@ -5,22 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style-index.css">
-    <link rel="stylesheet" href="css/tema.css">
     <title>Jogo da memória</title>
 </head>
 
-<body id="body">
-    <div id="menu">
-        <main>
-            <h1>Jogo da Memória</h1>
-            <button><a href="jogo.html">Jogar</a></button>
-            <button>Escolher tema</button>
+<body>
+    <nav id="menu">
+        <h1>Jogo da Memória</h1>
+        <div>
+            <button id="botao-jogar"><a href="jogo.html">Jogar</a></button>
+            <button id="botao-tema">Escolher tema</button>
             <button id="botao-creditos">Créditos</button>
-        </main>
+        </div>
 
-        <label>Nickname: <input type="text" id="nome"><button id="registrar" class="desaparecido">Registrar Nome</button></label>
+        <label>Nickname: <input type="text" id="nome"><button id="registrar" class="desaparecido">Registrar
+                Nome</button></label>
         <p>Recorde: <span id="recorde">0</span></p>
-    </div>
+    </nav>
 
     <div id="tema" class="invisivel">
         <header>
@@ -28,8 +28,8 @@
             <h1>Temas</h1>
             <p>Escolha um tema antes de iniciar o jogo!</p>
         </header>
-        
-        <main>
+
+        <section>
             <article>
                 <img src="imgs/presidentes/presidentes-verso.png">
                 <p>Presidentes</p>
@@ -60,15 +60,13 @@
                 <p>Amarelo</p>
                 <button class="botao-escolha">Escolher</button>
             </article>-->
-        </main>
+        </section>
     </div>
 
-    <script
-    src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-    crossorigin="anonymous"></script>
-<script src="js/modal.js"></script>
-<script src="js/temas.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/temas.js"></script>
 </body>
 
 </html>
