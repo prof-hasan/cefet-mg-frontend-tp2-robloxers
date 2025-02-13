@@ -15,7 +15,6 @@ let jogador = localStorage.getItem('jogador');
 let $janelaPerdeu = $('#perdeu');
 let $sair = $('#sair');
 let $jogarNovamente = $('#jogar-novamente');
-let intervalo; //tempo das cartas viradas
 
 //let 
 jogador = JSON.parse(jogador);
@@ -82,10 +81,10 @@ function iniciarNovoJogo() {
     duplasFormadas = [];
     criarDuplas();
 
-    if (fase >= 8 && fase < 16) {
+    if (fase >= 5 && fase < 10) {
         dificuldade = 'médio';
     }
-    else if (fase >= 16) {
+    else if (fase >= 10) {
         dificuldade = 'difícil';
     }
     else {
@@ -93,19 +92,16 @@ function iniciarNovoJogo() {
     }
     
     if (dificuldade === 'fácil') {
-        tempo = 30;
+        tempo = 15;
         subtrairPontuacao = 5;
-        intervalo = 1000;
     } 
     if (dificuldade === 'médio') {
-        tempo = 20;
+        tempo = 30;
         subtrairPontuacao = 10;
-        intervalo = 600;
     } 
     if (dificuldade === 'difícil') {
         tempo = 15;
         subtrairPontuacao = 20;
-        intervalo = 300;
     } 
     
     $relogio.html(tempo);
@@ -120,7 +116,7 @@ function iniciarNovoJogo() {
     setTimeout(() =>{
         virarCartas(cartasEl);
         prenderRelogio = false;
-    }, intervalo*2); //deixa as cartas viradas por um tempo no inicio
+    }, 1000*2); //deixa as cartas viradas por um tempo no inicio
 }
 
 setInterval(function() {
@@ -176,18 +172,6 @@ function virou(e){
                 $placar.html(pontuacao);
 
                 if(confeirFimDePartida()) {
-                    if (dificuldade == 'fácil') {
-                        pontuacao += 5;
-                    }
-                    if (dificuldade == 'médio') {
-                        pontuacao += 10;
-                    }
-                    if (dificuldade == 'difícil') {
-                        pontuacao += 15;
-                    }
-
-                    $placar.html(pontuacao);
-                    
                     fase +=1;
                     setTimeout(iniciarNovoJogo, 1000);
                     //iniciarNovoJogo();
@@ -201,7 +185,7 @@ function virou(e){
                     virarCartas(cartasViradas);
                     bloqueio = false;
                     cartasViradas = [];
-                }, intervalo);
+                }, 1000);
                 pontuacao -= subtrairPontuacao;
 
                 if(pontuacao < 0) pontuacao = 0;

@@ -1,5 +1,5 @@
-//index variáveis
-const botaoCreditosEl = document.querySelector('#botao-creditos');
+//Janela temas
+const botaoCreditosEl = document.querySelector('#botao-tema');
 const barraCreditosEl = document.querySelector('#tema');
 const botaoVoltarEl = document.querySelector('.voltar');
 
@@ -16,7 +16,7 @@ function esconder(){
 botaoCreditosEl.addEventListener('click', revelar);
 botaoVoltarEl.addEventListener('click', esconder);
 
-//registrar no local storage
+//Registrar no local storage
 if(JSON.parse(localStorage.getItem('jogador')) == null) {
     let jogadorAUX = {
         nome: '',

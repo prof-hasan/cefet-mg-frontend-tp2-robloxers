@@ -1,28 +1,81 @@
 .cartas{
     width: 200px;
-    height: 200px;
+    height: 283px; 
+    background-size: cover;
 }
 
-.virada{
-    background-color: pink !important; 
+/* Tema Sabrina*/
+
+.sabrina .virada{
+    background-image: url(/imgs/sabrina/sabrina-verso.png) !important;
 }
 
-.c1{
-    background-color: red;
+.sabrina .c1{
+    background-image: url(/imgs/sabrina/cant-send.png);
 }
 
-.c2{
-    background-color: green;
-
-}
-
-.c3{
-    background-color: yellow;
+.sabrina .c2{
+    background-image: url(/imgs/sabrina/espresso.png);
 
 }
 
-.c4{
-    background-color: blue;
+.sabrina .c3{
+    background-image: url(/imgs/sabrina/evolution.png);
+
+}
+
+.sabrina .c4{
+    background-image: url(/imgs/sabrina/short.png);
+
+}
+
+/* Tema Presidentes*/
+
+.presidentes .virada{
+    background-image: url(/imgs/presidentes/presidentes-verso.png) !important; 
+}
+
+.presidentes .c1{
+    background-image: url(/imgs/presidentes/bolsonaro.png);
+}
+
+.presidentes .c2{
+    background-image: url(/imgs/presidentes/dilma.png);
+
+}
+
+.presidentes .c3{
+    background-image: url(/imgs/presidentes/lula.png);
+
+}
+
+.presidentes .c4{
+    background-image: url(/imgs/presidentes/temer.png);
+
+}
+
+/* Tema Roblox*/
+
+.roblox .virada{
+    background-image: url(/imgs/roblox/roblox-verso.png) !important; 
+}
+
+.roblox .c1{
+    background-image: url(/imgs/roblox/blox-fruit.png);
+}
+
+.roblox .c2{
+    background-image: url(/imgs/roblox/doors.png);
+
+}
+
+.roblox .c3{
+    background-image: url(/imgs/roblox/dti.png);
+
+}
+
+.roblox .c4{
+    background-image: url(/imgs/roblox/rainbow.png);
 
 }
 
@@ -44,18 +97,4 @@
     background-color: aliceblue;
     width: 40%;
     display: none;
-}
-
-/*Temas:*/
-
-.presidentes{
-    background-image: url(/imgs/fundo-presidentes.jpg);
-}
-
-/*.sabrina{
-    background-image: url(/imgs/fundo-presidentes.jpg);
-}*/
-
-.roblox{
-    background-image: url(/imgs/fundo-roblox.jpg);
 }
