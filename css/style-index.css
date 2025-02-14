@@ -2,6 +2,7 @@ body{
     background-image: url(../imgs/fundo-principal.png);
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: Trebuchet MS, sans-serif;
 }
 
 #menu{
