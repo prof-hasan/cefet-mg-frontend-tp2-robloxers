@@ -92,6 +92,35 @@
 
 }
 
+/*tema padrao*/
+
+.padrao{
+    background-color:rgb(222, 239, 255);
+}
+
+.padrao .cartas.virada{
+    background-color: pink;
+}
+
+.padrao .c1{
+    background-color:rgb(107, 185, 191);
+}
+
+.padrao .c2{
+    background-color:rgb(191, 107, 159);
+
+}
+
+.padrao .c3{
+    background-color:rgb(148, 191, 107);
+
+}
+
+.padrao .c4{
+    background-color:rgb(122, 107, 191);
+
+}
+
 #container-cartas{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;

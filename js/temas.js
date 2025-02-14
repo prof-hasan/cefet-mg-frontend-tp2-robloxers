@@ -3,6 +3,9 @@ const fundoJogoEl = document.querySelector('#fundo-jogo');
 const janelaTemas = document.querySelector('#tema');
 const conteinerCartasEl = document.querySelector('#container-cartas');
 
+if (localStorage.getItem('tema') == null) {
+    localStorage.setItem('tema', 'padrao');
+}
 // Escolhendo tema:
 
 for (let botao of botoesEl) {
