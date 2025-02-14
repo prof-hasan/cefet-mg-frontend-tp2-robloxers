@@ -1,5 +1,5 @@
 body{
-    background-image: url(/imgs/fundo-principal.png);
+    background-image: url(../imgs/fundo-principal.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -44,7 +44,7 @@ body{
 }
 
 #tema{
-    background-color: white;
+    background-color: #F2F0F0;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -75,6 +75,7 @@ article img{
 
 .invisivel{
     left: -100%;
+    
 }
 
 /*botao nome*/
@@ -83,4 +84,54 @@ article img{
     background-color: lightblue;
     color: rgb(65, 128, 149);
     border: 1px solid rgb(123, 182, 202);
+}
+
+#credito {
+    position: fixed;
+    width: 15%;
+    height: 27%;
+    display: none;
+    background-color: #BF6B72;
+    color: pink;
+    text-shadow: 1px 1px black;
+    font-size: medium;
+    padding: 10px 20px;
+    top: 50%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+}
+
+#credito p{
+    animation-duration: 5s;
+    animation-name: slidein;
+    animation-iteration-count: 1;
+}
+
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 100%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+}
+  
+#credito.visivel {
+    display: block;
+}
+
+img {
+    width: 30%;
+}
+
+div > h1{
+    background-color: #f2f0f0e1;
+}
+
+div{
+    text-align: center;
 }

@@ -1,20 +1,27 @@
 //Janela temas
-const botaoCreditosEl = document.querySelector('#botao-tema');
-const barraCreditosEl = document.querySelector('#tema');
+const botaoTemas = document.querySelector('#botao-tema');
+const barraTemasEl = document.querySelector('#tema');
 const botaoVoltarEl = document.querySelector('.voltar');
+const botaoCredito = document.querySelector('#botao-creditos')
+const barraCreditoEl = document.querySelector('#credito')
 
 function revelar(){
-    barraCreditosEl.classList.remove('invisivel');
-    barraCreditosEl.classList.add('visivel');
+    barraTemasEl.classList.remove('invisivel');
+    barraTemasEl.classList.add('visivel');
 }
 
 function esconder(){
-    barraCreditosEl.classList.remove('visivel');
-    barraCreditosEl.classList.add('invisivel');
+    barraTemasEl.classList.remove('visivel');
+    barraTemasEl.classList.add('invisivel');
 }
 
-botaoCreditosEl.addEventListener('click', revelar);
+botaoTemas.addEventListener('click', revelar);
 botaoVoltarEl.addEventListener('click', esconder);
+
+botaoCredito.addEventListener('click', () => {
+    barraCreditoEl.classList.toggle('visivel');
+    barraCreditoEl.classList.toggle('');
+})
 
 //Registrar no local storage
 if(JSON.parse(localStorage.getItem('jogador')) == null) {

@@ -2,80 +2,93 @@
     width: 200px;
     height: 283px; 
     background-size: cover;
+    
 }
 
 /* Tema Sabrina*/
 
+.sabrina{
+    background-color: rgb(255, 192, 203);
+}
+
 .sabrina .virada{
-    background-image: url(/imgs/sabrina/sabrina-verso.png) !important;
+    background-image: url(../imgs/sabrina/sabrina-verso.png) !important;
 }
 
 .sabrina .c1{
-    background-image: url(/imgs/sabrina/cant-send.png);
+    background-image: url(../imgs/sabrina/cant-send.png);
 }
 
 .sabrina .c2{
-    background-image: url(/imgs/sabrina/espresso.png);
+    background-image: url(../imgs/sabrina/espresso.png);
 
 }
 
 .sabrina .c3{
-    background-image: url(/imgs/sabrina/evolution.png);
+    background-image: url(../imgs/sabrina/evolution.png);
 
 }
 
 .sabrina .c4{
-    background-image: url(/imgs/sabrina/short.png);
+    background-image: url(../imgs/sabrina/short.png);
 
 }
 
 /* Tema Presidentes*/
 
+.presidentes{
+    background-color: #C6E5B1;
+}
+
 .presidentes .virada{
-    background-image: url(/imgs/presidentes/presidentes-verso.png) !important; 
+    background-image: url(../imgs/presidentes/presidentes-verso.png) !important; 
 }
 
 .presidentes .c1{
-    background-image: url(/imgs/presidentes/bolsonaro.png);
+    background-image: url(../imgs/presidentes/bolsonaro.png);
 }
 
 .presidentes .c2{
-    background-image: url(/imgs/presidentes/dilma.png);
+    background-image: url(../imgs/presidentes/dilma.png);
 
 }
 
 .presidentes .c3{
-    background-image: url(/imgs/presidentes/lula.png);
+    background-image: url(../imgs/presidentes/lula.png);
 
 }
 
 .presidentes .c4{
-    background-image: url(/imgs/presidentes/temer.png);
+    background-image: url(../imgs/presidentes/temer.png);
 
 }
 
 /* Tema Roblox*/
 
+.roblox{
+    background-color: #D0D1D2;
+}
+
 .roblox .virada{
-    background-image: url(/imgs/roblox/roblox-verso.png) !important; 
+    background-image: url(../imgs/roblox/roblox-verso.png) !important; 
 }
 
 .roblox .c1{
-    background-image: url(/imgs/roblox/blox-fruit.png);
+    background-image: url(../imgs/roblox/blox-fruit.png);
 }
 
 .roblox .c2{
-    background-image: url(/imgs/roblox/doors.png);
+    background-image: url(../imgs/roblox/doors.png);
 
 }
 
 .roblox .c3{
-    background-image: url(/imgs/roblox/dti.png);
+    background-image: url(../imgs/roblox/dti.png);
 
 }
 
 .roblox .c4{
-    background-image: url(/imgs/roblox/rainbow.png);
+    background-image: url(../imgs/roblox/rainbow.png);
 
 }
 
@@ -83,7 +96,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 15px 10px;
+    gap: 30px 10px;
+    justify-items: center;
+    padding-top: 10px;
     /*margin-top: 10%;
     margin-left: 20%;
     margin-right: 15%;*/
@@ -94,7 +109,35 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: aliceblue;
-    width: 40%;
+    background-color: rgba(0, 0, 0, 0.644);
+    width: 30%;
     display: none;
+    border-radius: 20px;
+    text-align: center;
+    padding: 15px;
+    color: rgb(209, 0, 0);
+    border: 2px rgb(255, 255, 255) double;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+}
+
+header p{
+    background-color: rgba(134, 182, 255, 0.603);
+    padding: 20px 50px;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+}
+
+header a {
+    color: rgb(255, 255, 255);
+}
+
+#fundo-jogo > p{
+    text-align: center;
+    font-size: larger;
+    color: rgba(0, 0, 0, 0.719);
+    font-style: italic;
 }

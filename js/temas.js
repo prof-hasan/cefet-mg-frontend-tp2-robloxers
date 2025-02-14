@@ -18,7 +18,9 @@ for (let botao of botoesEl) {
 // Aplicando o tema
 
 let tema = localStorage.getItem('tema');
+let fundoHtml = document.querySelector('#fundo');
 conteinerCartasEl.classList.add(tema);
+fundoHtml.classList.add(tema);
 
 let mostraTema = document.createElement("p");
 mostraTema.innerHTML = `Tema escolhido: ${localStorage.getItem('tema')}`;
